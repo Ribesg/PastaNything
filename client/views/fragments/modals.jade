@@ -1,0 +1,32 @@
+template(name="modals")
+  #message.ui.message
+    h1.ui.header
+      span#message-title
+      .sub.header#message-text
+  #loading-modal.ui.basic.modal
+    #loading-modal-text.ui.text.loader Saving...
+  #confirm-modal.ui.warning.message.modal
+    h1.ui.header
+      i.huge.question.icon
+      .content
+        span#confirm-modal-title
+        #confirm-modal-text.sub.header
+    .actions
+      .ui.huge.buttons
+        .ui.positive.button Yes
+        .or
+        .ui.negative.button No
+  #success-modal.ui.success.message.modal
+    i.green.close.icon
+    h1.ui.header
+      i.huge.checkmark.icon
+      .content
+        span#success-modal-title
+        #success-modal-text.sub.header
+  #error-modal.ui.error.message.modal
+    i.red.close.icon
+    h1.ui.header
+      i.huge.bug.icon
+      .content
+        span#error-modal-title
+        #error-modal-text.sub.header

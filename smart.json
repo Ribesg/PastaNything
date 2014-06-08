@@ -1,5 +1,7 @@
 {
   "packages": {
-    "jade": {}
+    "jade": {},
+    "iron-router": {},
+    "event-hooks": {}
   }
 }

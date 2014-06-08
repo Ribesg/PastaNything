@@ -1,0 +1,122 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans");
+
+body
+  font-family 'Open Sans', sans-serif
+
+.field .ui.ribbon.label
+  background-color #A1CF64 !important
+  border-color #89B84C !important
+
+.field.error .ui.ribbon.label
+  background-color #D95C5C !important
+  border-color #DE3859 !important
+
+.clickable-label
+  cursor pointer
+  
+  i.icon
+    float right
+    font-size 1.42em
+
+textarea
+  min-height initial !important
+  max-height initial !important
+
+table
+  table-layout fixed
+
+td
+  overflow auto
+
+#header-buttons
+  position absolute
+  left 5px
+  top 10px
+
+#login-buttons
+  position absolute
+  right 5px
+  top 10px
+
+.align-center
+  text-align center
+
+.cell-shortUrl
+  overflow scroll
+
+#header
+  position relative
+  text-align center
+  font-size 1.75em
+  margin 0.5%
+  
+  h1.ui.header
+    margin-top 0
+    font-size 3em
+    transition font-size .5s
+
+    a
+      color inherit
+      text-decoration none
+
+    .sub.header
+      font-size 0.42em
+  
+  #header-icon-container
+    overflow hidden
+    margin 0
+    margin-top 20px
+    height 230px
+    transition height .5s
+    
+    #header-icon
+      margin 0
+      transition margin .5s
+
+#header.small
+#header.collapsed
+
+  h1.ui.header
+    font-size 1.25em
+  
+  #header-icon-container
+    height 0
+
+    #header-icon
+      margin-top -100%
+
+#header-content
+  width 100%
+  height 100%
+
+#message
+  display none
+
+#message.visible
+  display initial
+
+#content > .column
+  background-color #EEEEEE
+  padding 0 5%
+
+.footer-text
+  font-size 0.666em
+
+.button-bar
+  text-align center
+  margin 10px 0 !important
+
+.clear-button
+  float left
+
+.add-buttons
+  margin auto
+
+.pasta-button
+  float right
+
+.remove-button
+  width 50px
+
+.hidden
+  display none

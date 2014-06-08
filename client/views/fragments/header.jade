@@ -1,0 +1,33 @@
+template(name="header")
+  #header
+    #header-buttons
+      #home-button.ui.icon.button
+        i.home.icon
+      if isAdmin
+        #admin-button.ui.icon.button
+          i.legal.icon
+    +loginButtons align="right"
+    #header-icon-container
+      i#header-icon.huge.circular.upload.disk.icon
+    h1.ui.header
+      a(href="/")
+        .content PastaNything
+          .sub.header Something about pasting stuff
+  .ui.horizontal.icon.divider
+    i.add.icon
+
+template(name="smallHeader")
+  #header.small
+    #header-buttons
+      #home-button.ui.icon.button
+        i.home.icon
+      if isAdmin
+        #admin-button.ui.icon.button
+          i.legal.icon
+    +loginButtons align="right"
+    h1.ui.header
+      a(href="/")
+        .content PastaNything
+          .sub.header Something about pasting stuff
+  .ui.horizontal.icon.divider
+    i.add.icon

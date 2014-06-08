@@ -1,0 +1,82 @@
+template(name="admin")
+  #content.ui.one.column.page.grid
+    .column
+      +smallHeader
+      +admin_content
+      +footer
+
+template(name="admin_content")
+  +modals
+  #buttons-container
+  table.ui.table.segment
+    thead
+      tr
+        th.five.wide UserName
+        th.eleven.wide Actions
+    tbody#oneline-user-container
+
+template(name="admin_buttons")
+  .ui.red.segment.admin-buttons
+    h1.ui.header Danger Zone
+      .sub.header These buttons are dangerous. Handle with care.
+    #clear-all.ui.red.button CLEAR EVERYTHING FOREVER!
+    #clear-pastas.ui.red.button Clear All Pastas
+    #kill-users.ui.red.button Kill All Users
+  .ui.blue.segment.admin-buttons
+    h1.ui.header Stub Zone
+      .sub.header These buttons allow you to add/remove stub users and pastas
+    #stubs-create.ui.blue.button (Re)Create Stub
+    #stubs-destroy.ui.blue.button Destroy Stub
+
+template(name="anonymous_user")
+  tr.warning#anonymous
+    td
+      i.icon.user
+      | Anonymous users
+    td.align-center
+      .view-user.ui.green.labeled.icon.button 
+        i.unhide.icon
+        | View
+      .disabled.ui.orange.labeled.icon.button 
+        i.double.angle.up.icon
+        | Promote
+      .clear-user-pastas.ui.red.labeled.icon.button
+        i.remove.icon
+        | Clear Pastas
+      .disabled.ui.red.labeled.icon.button
+        i.screenshot.icon
+        | Kill User
+
+template(name="oneline_user")
+  if isAdmin
+    tr.positive(id="#{username}")
+      td #{username}
+      td.align-center
+        .view-user.ui.green.labeled.icon.button 
+          i.unhide.icon
+          | View
+        .toggle-admin.ui.orange.labeled.icon.button 
+          i.double.angle.down.icon
+          | Relegate
+        .clear-user-pastas.ui.red.labeled.icon.button 
+          i.remove.icon
+          | Clear Pastas
+        .kill-user.ui.red.labeled.icon.button 
+          i.screenshot.icon
+          | Kill User
+  else
+    tr(id="#{username}")
+      td #{username}
+      td.align-center
+        .view-user.ui.green.labeled.icon.button 
+          i.unhide.icon
+          | View
+        .toggle-admin.ui.orange.labeled.icon.button 
+          i.double.angle.up.icon
+          | Promote
+        .clear-user-pastas.ui.red.labeled.icon.button 
+          i.remove.icon
+          | Clear Pastas
+        .kill-user.ui.red.labeled.icon.button 
+          i.screenshot.icon
+          | Kill User

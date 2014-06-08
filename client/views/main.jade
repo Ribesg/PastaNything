@@ -1,0 +1,84 @@
+template(name="main")
+  #content.ui.one.column.page.grid
+    .column
+      +header
+      +main_content
+      +footer
+
+template(name="main_content")
+  .row
+    #superform.ui.segment
+      +top_button_bar
+      #superform_content.one.column.grid
+      #loading.ui.inverted.dimmer
+        .ui.text.loader Loading...
+
+template(name="top_button_bar")
+  #top-button-bar.button-bar
+    +button_bar
+
+template(name="bottom_button_bar")
+  #bottom-button-bar.button-bar
+    +button_bar
+
+template(name="button_bar")
+  .clear-button.ui.labeled.icon.disabled.red.button
+    i.icon.remove.sign
+    | Clear all
+  .add-buttons.ui.buttons
+    .url.ui.button(type="url") URL
+    .or
+    .text.ui.button(type="text") Text
+    .or
+    .code.ui.button(type="code") Code
+    .or
+    .img.ui.button.disabled(type="img") Image
+  .pasta-button.ui.labeled.icon.disabled.green.button
+    i.icon.upload.disk
+    | Paste
+
+template(name="field_url")
+  .ui.form.segment.url
+    .field
+      label Url
+      .ui.action.input
+        input.field-input(type="text" name="url" placeholder="Url to shorten..." value="http://")
+        .remove-button.ui.icon.red.button
+          i.icon.remove
+
+template(name="field_text")
+  .ui.form.segment.text
+    .field
+      label Text
+      .ui.action.input
+        textarea.field-input(name="text" placeholder="Text to paste...")
+        .remove-button.ui.icon.red.button
+          i.icon.remove
+
+template(name="field_code")
+  .ui.form.segment.code
+    .field
+      label Code
+      .ui.action.input
+        textarea.field-input(name="code" placeholder="Code to paste")
+        .remove-button.ui.icon.red.button
+          i.icon.remove
+    .field
+      label Language
+      .ui.selection.dropdown
+        input.type-input(type="hidden" value="")
+        .text Language
+        i.dropdown.icon
+        .menu
+          +each languages
+            .item(data-value="#{name}") #{name}
+    script $('.ui.dropdown').dropdown();
+
+template(name="field_image")
+  .ui.form.segment.image
+    .field
+      label Image
+      .ui.action.input
+        input.field-input(type="file" name="image")
+        .remove-button.ui.icon.red.button
+          i.icon.remove

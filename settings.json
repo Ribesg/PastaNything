@@ -1,0 +1,7 @@
+{
+  "adminAccount": {
+    "username": "admin",
+    "email": "admin@example.com",
+    "password": "changeme"
+  }
+}

@@ -1,0 +1,73 @@
+template(name="edit")
+  #content.ui.one.column.page.grid
+    .column
+      +smallHeader
+      +edit_content
+      +footer
+
+template(name="edit_content")
+  #edit-container
+    +modals
+
+template(name="edit_url")
+  .ui.form.segment
+    .field
+      label.ui.green.ribbon.label Short URL
+      .ui.right.labeled.icon.input
+        input.shorturl-input(type="text" placeholder="#{rootUrl}#{shortUrl}" value="#{rootUrl}#{shortUrl}")
+        i.green.checkmark.icon
+    .field
+      label.ui.green.ribbon.label Title
+      input.title-input(type="text" placeholder="#{title}" value="#{title}")
+    .field
+      label.ui.green.ribbon.label URL
+      input.content-input(type="text" placeholder="#{longUrl}" value="#{longUrl}")
+    .save-button.ui.labeled.blue.icon.button
+      i.save.icon
+      | Save
+
+template(name="edit_text")
+  .ui.form.segment
+    .field
+      label.ui.green.ribbon.label Short URL
+      .ui.right.labeled.icon.input
+        input.shorturl-input(type="text" placeholder="#{rootUrl}#{shortUrl}" value="#{rootUrl}#{shortUrl}")
+        i.green.checkmark.icon
+    .field
+      label.ui.green.ribbon.label Title
+      input.title-input(type="text" placeholder="#{title}" value="#{title}")
+    .field
+      label.clickable-label.ui.green.ribbon.label Text
+        i.down.arrow.icon
+      textarea.content-input(placeholder="#{text}") #{text}
+    .save-button.ui.labeled.blue.icon.button
+      i.save.icon
+      | Save
+
+template(name="edit_code")
+  .ui.form.attached.segment
+    .field
+      label.ui.green.ribbon.label Short URL
+      .ui.right.labeled.icon.input
+        input.shorturl-input(type="text" placeholder="#{rootUrl}#{shortUrl}" value="#{rootUrl}#{shortUrl}")
+        i.green.checkmark.icon
+    .field
+      label.ui.green.ribbon.label Title
+      input.title-input(type="text" placeholder="#{title}" value="#{title}")
+    .field
+      label.ui.green.ribbon.label Language
+      .ui.selection.dropdown
+        input.type-input(type="hidden" value="#{type_name}")
+        .text #{type_name}
+        i.dropdown.icon
+        .menu
+          +each languages
+            .item(data-value="#{name}") #{name}
+    .field
+      label.clickable-label.ui.green.ribbon.label Code
+        i.down.arrow.icon
+      textarea.content-input(placeholder="#{code}") #{code}
+    .save-button.ui.labeled.blue.icon.button
+      i.save.icon
+      | Save
+  script $('.ui.dropdown').dropdown();

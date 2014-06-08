@@ -1,0 +1,13 @@
+template(name="debug")
+  #content.ui.one.column.page.grid
+    .column
+      +smallHeader
+      +debug_content
+      +footer
+
+template(name="debug_content")
+  #wipe-button.ui.red.button Wipe everything
+  h1.ui.header Meteor.users Collection content
+  pre: code #{users}
+  h1.ui.header Pastas Collection content
+  pre: code #{pastas}

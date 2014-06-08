@@ -1,0 +1,63 @@
+head
+  link(
+    type = "text/css"
+    rel  = "stylesheet"
+    href = "/css/prettify-github.css"
+  )
+  script(src="/javascript/prettify/prettify.js")
+
+template(name="pasta")
+  #content.ui.one.column.page.grid
+    .column
+      +smallHeader
+      +pasta_content
+      +footer
+
+template(name="pasta_content")
+  +modals
+  #pasta-container
+
+template(name="pasta_url")
+  .ui.form.segment
+    .field
+      label.ui.green.ribbon.label Short URL
+      a(href="#{shortUrl}") #{shortUrl}
+    +if title
+      .field
+        label.ui.green.ribbon.label Title
+        p #{title}
+    .field
+      label.ui.green.ribbon.label Redirection URL
+      a(href="#{longUrl}") #{longUrl}
+
+template(name="pasta_text")
+  .ui.form.segment
+    .field
+      label.ui.green.ribbon.label Short URL
+      a(href="#{shortUrl}") #{shortUrl}
+    +if title
+      .field
+        label.ui.green.ribbon.label Title
+        p #{title}
+    .field
+      label.clickable-label.ui.green.ribbon.label Text
+        i.down.arrow.icon
+      textarea.content-input(readonly="readonly") #{text}
+
+template(name="pasta_code")
+  .ui.form.segment
+    .field
+      label.ui.green.ribbon.label Short URL
+      a(href="#{shortUrl}") #{shortUrl}
+    +if title
+      .field
+        label.ui.green.ribbon.label Title
+        p #{title}
+    .field
+      label.ui.green.ribbon.label Language
+      p #{type}
+    .field
+      label.ui.green.ribbon.label Code
+      pre(class="prettyprint linenums lang-#{type}")
+        | #{code}
+  script prettyPrint();

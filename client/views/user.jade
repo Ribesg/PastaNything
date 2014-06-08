@@ -1,0 +1,33 @@
+template(name="user")
+  #content.ui.one.column.page.grid
+    .column
+      +smallHeader
+      +user_content
+      +footer
+
+template(name="user_content")
+  +modals
+  table.ui.table.segment
+    thead
+      tr
+        th.two.wide Short URL
+        th.two.wide Type
+        th.five.wide Title
+        th.seven.wide Actions
+    tbody#oneline-pasta-container
+
+template(name="oneline_pasta")
+  tr(id="#{shortUrl}")
+    td #{shortUrl}
+    td #{type}
+    td #{title}
+    td.align-center
+      .view-button.ui.labeled.icon.button
+        i.unhide.icon
+        | View
+      .edit-button.ui.labeled.icon.button
+        i.edit.icon
+        | Edit
+      .delete-button.ui.labeled.icon.red.button
+        i.remove.icon
+        | Delete
