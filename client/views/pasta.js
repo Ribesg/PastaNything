@@ -3,7 +3,6 @@ var getPastaId = function() {
 };
 
 var appendPasta = function(pasta) {
-  console.log("Appending pastas " + pasta.url);
   var data = {
     shortUrl: Meteor.absoluteUrl() + pasta.url,
     title: isEmpty(pasta.title) || Pasta.isDefaultTitle(pasta.title, pasta.type, pasta.url) ? '' : pasta.title
@@ -50,13 +49,11 @@ var setNb = function(value) {
 };
 
 var clearPasta = function() {
-  console.log("Clearing pastas");
   $("#pasta-container").children().remove();
   Modals.resetMessage();
 };
 
 var updatePasta = function(pid) {
-  console.log("Updating pastas");
   Meteor.call("getPasta", pid, function(error, result) {
     clearPasta();
     if (result) {
