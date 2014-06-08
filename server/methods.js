@@ -457,7 +457,7 @@ Meteor.methods({
           }
           break;
         case "TEXT":
-          if (!newData || !isEmpty(newData)) {
+          if (!newData || isEmpty(newData)) {
             throw new Meteor.Error(403, "Forbidden", "Text can\'t be empty");
           }
           break;

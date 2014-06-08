@@ -34,16 +34,16 @@ template(name="anonymous_user")
       i.icon.user
       | Anonymous users
     td.align-center
-      .view-user.ui.green.labeled.icon.button 
+      .view-user.ui.green.labeled.icon.button.mini
         i.unhide.icon
         | View
-      .disabled.ui.orange.labeled.icon.button 
+      .disabled.ui.orange.labeled.icon.button.mini
         i.double.angle.up.icon
         | Promote
-      .clear-user-pastas.ui.red.labeled.icon.button
+      .clear-user-pastas.ui.red.labeled.icon.button.mini
         i.remove.icon
         | Clear Pastas
-      .disabled.ui.red.labeled.icon.button
+      .disabled.ui.red.labeled.icon.button.mini
         i.screenshot.icon
         | Kill User
 
@@ -52,31 +52,31 @@ template(name="oneline_user")
     tr.positive(id="#{username}")
       td #{username}
       td.align-center
-        .view-user.ui.green.labeled.icon.button 
+        .view-user.ui.green.labeled.icon.button.mini
           i.unhide.icon
           | View
-        .toggle-admin.ui.orange.labeled.icon.button 
+        .toggle-admin.ui.orange.labeled.icon.button.mini
           i.double.angle.down.icon
           | Relegate
-        .clear-user-pastas.ui.red.labeled.icon.button 
+        .clear-user-pastas.ui.red.labeled.icon.button.mini
           i.remove.icon
           | Clear Pastas
-        .kill-user.ui.red.labeled.icon.button 
+        .kill-user.ui.red.labeled.icon.button.mini
           i.screenshot.icon
           | Kill User
   else
     tr(id="#{username}")
       td #{username}
       td.align-center
-        .view-user.ui.green.labeled.icon.button 
+        .view-user.ui.green.labeled.icon.button.mini
           i.unhide.icon
           | View
-        .toggle-admin.ui.orange.labeled.icon.button 
+        .toggle-admin.ui.orange.labeled.icon.button.mini
           i.double.angle.up.icon
           | Promote
-        .clear-user-pastas.ui.red.labeled.icon.button 
+        .clear-user-pastas.ui.red.labeled.icon.button.mini
           i.remove.icon
-          | Clear Pastas
-        .kill-user.ui.red.labeled.icon.button 
+          | Clean Pastas
+        .kill-user.ui.red.labeled.icon.button.mini
           i.screenshot.icon
           | Kill User
